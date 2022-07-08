@@ -10,7 +10,7 @@ const App = (props) => {
     { id: Math.random().toString(), content: "cong viec 2" },
     { id: Math.random().toString(), content: "cong viec 3" },
   ]);
-
+  //localStorage.setItem("data", );
   const getDataInputHandler = (newData) => {
     const data = newData;
     setListCV((prevList) => [data, ...prevList]);

@@ -1,5 +1,13 @@
 .feature {
+  position: relative;
   width: 100%;
   height: inherit;
   display: inherit;
+  margin-left: 80%;
+  top: -20px;
+}
+.job {
+  box-sizing: border-box;
+  margin: 3px 10px 4px 31px;
+  padding-top: 20px;
 }

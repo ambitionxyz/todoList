@@ -7,5 +7,6 @@
   display: flex;
   justify-content: space-around;
 }
-.input {
+.form input {
+  width: 45%;
 }

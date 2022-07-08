@@ -53,7 +53,7 @@ const Job = (props) => {
         />
       )}
       <div className={classes.feature}>
-        {!isEdit && <Button onClick={deleteHandler}>Xoa</Button>}
+        {!isEdit && <Button onClick={deleteHandler} >Xoa</Button>}
         <Button onClick={editHandler}>Sua</Button>
       </div>
     </React.Fragment>
