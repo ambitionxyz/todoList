@@ -1,0 +1,11 @@
+.form {
+  position: relative;
+  top: 28px;
+  left: 0px;
+}
+.form div {
+  display: flex;
+  justify-content: space-around;
+}
+.input {
+}

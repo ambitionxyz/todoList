@@ -1,0 +1,10 @@
+.overview {
+  background-color: rgb(221, 27, 108);
+  width: 80%;
+  height: 900px;
+
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
