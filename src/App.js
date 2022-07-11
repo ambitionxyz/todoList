@@ -5,47 +5,39 @@ import Header from "./component/Header/Header";
 import ListJob from "./component/ListJob/ListJob";
 import classes from "./App.module.css";
 const App = (props) => {
-  const [listCV, setListCV] = useState([
-    { id: Math.random().toString(), content: "cong viec 1" },
-    { id: Math.random().toString(), content: "cong viec 2" },
-    { id: Math.random().toString(), content: "cong viec 3" },
-  ]);
-  //localStorage.setItem("data", );
-  const getDataInputHandler = (newData) => {
+  const [listCV, setListCV] = useState([]);
+
+  const addItem = (newData) => {
     const data = newData;
     setListCV((prevList) => [data, ...prevList]);
-    // console.log(listCV);
   };
-  const runDeleteHandler = (id) => {
-    console.log(id);
+
+  const deleteItem = (id) => {
     const newList = listCV.filter((item) => {
       return item.id !== id;
     });
-
     setListCV(newList);
   };
-  const runEditHandler = (data) => {
-    //console.log(data);
+
+  const editItem = (data) => {
     const indexE = listCV.findIndex((item) => {
       return item.id === data.id;
     });
     if (indexE !== -1) {
-      console.log("da tim thay");
+      const newList = listCV;
+      newList[indexE].content = data.content;
+      setListCV(newList);
     }
-    const newList = listCV;
-    newList[indexE].content = data.content;
-    setListCV(newList);
   };
 
   return (
     <Card className={classes.overview}>
       <h1>TO DO LIST</h1>
-      <Header onGetDataInput={getDataInputHandler} />
-      {/* <ListJob listData={listCV}></ListJob> */}
+      <Header addItem={addItem} dataSource={listCV} />
       <ListJob
-        listData={listCV}
-        onRunDelete={runDeleteHandler}
-        onRunEdit={runEditHandler}
+        dataSource={listCV}
+        deleteItem={deleteItem}
+        editItem={editItem}
       ></ListJob>
     </Card>
   );
